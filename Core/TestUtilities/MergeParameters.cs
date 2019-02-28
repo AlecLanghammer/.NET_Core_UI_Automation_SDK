@@ -27,18 +27,6 @@ namespace Core.TestUtilities
         }
 
         /// <summary>
-        /// Builds and returns a dictionary from the parameters in app.config
-        /// </summary>
-        /*
-        static Dictionary<string, string> GetConfigDict()
-        {
-            return FrameworkConfig.GetConfigDict();
-            //return (ConfigurationManager.GetSection("DriverSettings/Settings") as System.Collections.Hashtable)
-                        //    .Cast<System.Collections.DictionaryEntry>()
-                       //     .ToDictionary(n => n.Key.ToString().ToLower(), n => n.Value.ToString().ToLower());
-        }
-        */
-        /// <summary>
         /// Merges the two dictionaries with envDict taking priority
         /// </summary>
         /// <param name="envDict">Dictionary built from environment variables</param>

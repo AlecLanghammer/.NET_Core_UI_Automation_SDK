@@ -19,5 +19,11 @@ namespace Core.PageObject
             var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
             return wait.Until(drv => drv.FindElement(locator));
         }
+
+        public bool IsInteractable()
+        {
+            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
+            return wait.Until(drv => Get().Enabled);
+        }
     }
 }

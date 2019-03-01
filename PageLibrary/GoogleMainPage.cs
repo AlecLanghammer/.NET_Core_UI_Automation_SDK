@@ -8,13 +8,11 @@ namespace PageLibrary
     public class GoogleMainPage : BasePage
     {
         private string expectedPageTitle = "Google";
-        private string homePageUrl;
 
         WebElementProxy searchField;
 
-        public GoogleMainPage(IWebDriver driver, string url) : base(driver)
+        public GoogleMainPage(IWebDriver driver) : base(driver)
         {
-            homePageUrl = url;
             InitializeElements();
         }
 
@@ -28,16 +26,9 @@ namespace PageLibrary
             searchField.Get().SendKeys(searchString);
         }
 
-        protected override void ExecuteLoad()
+        public override void WaitForLoad()
         {
-            driver.Navigate().GoToUrl(homePageUrl);
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(20));
-            wait.Until(drv => drv.Title.Equals(expectedPageTitle));
-        }
-
-        protected override bool EvaluateLoadedStatus()
-        {
-            return expectedPageTitle == driver.Title;
+            WaitForPageTitle(expectedPageTitle);
         }
     }
 }

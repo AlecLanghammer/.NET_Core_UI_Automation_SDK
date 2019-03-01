@@ -14,13 +14,14 @@ namespace TestLibrary
         [TestInitialize]
         public void StartTest()
         {
-            googleMainPage = new GoogleMainPage(driver, "http://www.google.com");
+            googleMainPage = new GoogleMainPage(driver);
         }
 
         [TestCategory("Example"), TestMethod]
         public void GoogleMainPageTest()
         {
-            googleMainPage.Load();
+            driver.Navigate().GoToUrl("http://www.google.com");
+            googleMainPage.WaitForLoad();
             googleMainPage.EnterSearchField("Test");
         }
     }

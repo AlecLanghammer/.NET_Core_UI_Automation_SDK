@@ -22,7 +22,7 @@ namespace Core.TestUtilities
             try
             {
                 string date = DateTime.Now.ToString("yyyy-MM-dd_hh_mm_ss");
-                string path = ConfigurationManager.AppSettings["ScreenshotPath"];
+                string path = FrameworkConfig.configDict["ScreenshotPath"];
                 var screenshot = ((ITakesScreenshot)driver).GetScreenshot();
                 string fullPath = path + descriptor + date + ".jpg";
                 screenshot.SaveAsFile(fullPath, ScreenshotImageFormat.Jpeg);

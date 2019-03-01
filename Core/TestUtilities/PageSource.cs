@@ -23,7 +23,7 @@ namespace Core.TestUtilities
             try
             {
                 string date = DateTime.Now.ToString("yyyy-MM-dd_hh_mm_ss");
-                string path = ConfigurationManager.AppSettings["SourcePath"];
+                string path = FrameworkConfig.configDict["SourcePath"];
                 string fullPath = path + descriptor + date + ".html";
                 using (StreamWriter sw = new StreamWriter(fullPath))
                 {

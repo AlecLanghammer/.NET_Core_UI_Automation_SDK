@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Configuration;
 
 namespace Core.TestUtilities
 {
@@ -10,7 +9,7 @@ namespace Core.TestUtilities
     {
         public static Dictionary<string, string> BuildParameters()
         {
-            return Merge(GetEnvDict(), FrameworkConfig.GetConfigDict());
+            return Merge(GetEnvDict(), FrameworkConfig.configDict);
         }
 
         /// <summary>

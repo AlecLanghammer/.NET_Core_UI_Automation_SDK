@@ -15,6 +15,7 @@ namespace TestLibrary
         public void StartTest()
         {
             googleMainPage = new GoogleMainPage(driver);
+            //googleMainPage.sideMenu.element1.Get().Click();
         }
 
         [TestCategory("Example"), TestMethod]

@@ -9,11 +9,14 @@ namespace PageLibrary
     {
         private string expectedPageTitle = "Google";
 
+        public SideMenu sideMenu;
+
         WebElementProxy searchField;
 
         public GoogleMainPage(IWebDriver driver) : base(driver)
         {
             InitializeElements();
+            sideMenu = new SideMenu(driver);
         }
 
         void InitializeElements()
